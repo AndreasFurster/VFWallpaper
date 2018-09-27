@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="ce967286-1f1c-4c08-ba65-071a128f3222"
+    Name="e29ea879-df34-4c64-8218-91588d647e6e"
     Publisher="CN=andre"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="ce967286-1f1c-4c08-ba65-071a128f3222" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="e29ea879-df34-4c64-8218-91588d647e6e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>VFWallpaper.UWP</DisplayName>
