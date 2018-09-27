@@ -1,14 +1,15 @@
 ﻿<Page
-    x:Class="VFWallpaper.UWP.MainPage"
+    x:Class="VFWallpaper.UWP.Pages.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:VFWallpaper.UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
 
     <Grid>
-
+        <TextBlock x:Name="LogTextBlock" HorizontalAlignment="Left" Margin="44,53,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="806" Width="322"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,28,0,0" Text="Log" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="322"/>
     </Grid>
 </Page>
