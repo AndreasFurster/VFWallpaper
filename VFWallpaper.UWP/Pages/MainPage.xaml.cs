@@ -45,7 +45,7 @@ namespace VFWallpaper.UWP.Pages
 
             for (int i = 0; i < 100; i++)
             {
-                var bc = new BackgroundChanger();
+                var bc = new WallpaperChanger();
                 await bc.Update();
 
                 await Task.Delay(TimeSpan.FromSeconds(5));

@@ -8,7 +8,7 @@ using VFWallpaper.UWP.Utilities;
 
 namespace VFWallpaper.UWP.BackgroundTasks
 {
-    public sealed class BackgroundChangerTask : IBackgroundTask
+    public sealed class WallpaperChangerBackgroundTask : IBackgroundTask
     {
         private BackgroundTaskDeferral _deferral;
 
@@ -17,7 +17,7 @@ namespace VFWallpaper.UWP.BackgroundTasks
             // We need to use a deferral to make sure all awaits are done synchronous
             _deferral = taskInstance.GetDeferral();
 
-            var bc = new BackgroundChanger();
+            var bc = new WallpaperChanger();
             await bc.Update();
 
             _deferral.Complete();

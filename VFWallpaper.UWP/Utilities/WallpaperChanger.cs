@@ -11,7 +11,7 @@ using Windows.UI.ViewManagement;
 
 namespace VFWallpaper.UWP.Utilities
 {
-    class BackgroundChanger
+    class WallpaperChanger
     {
         public async Task Update()
         {

@@ -16,7 +16,7 @@ namespace VFWallpaper.UWP.Utilities
             if (interval < 1)
                 throw new ArgumentOutOfRangeException($"{nameof(interval)} should be 1 or higher");
 
-            const string taskName = nameof(BackgroundChangerTask);
+            const string taskName = nameof(WallpaperChangerBackgroundTask);
             var registered = BackgroundTaskRegistration.AllTasks.Any(t => t.Value.Name == taskName);
             
             if(registered)

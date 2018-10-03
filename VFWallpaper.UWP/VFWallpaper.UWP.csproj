@@ -95,12 +95,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BackgroundTasks\BackgroundChangerTask.cs" />
+    <Compile Include="BackgroundTasks\WallpaperChangerBackgroundTask.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\BackgroundChanger.cs" />
+    <Compile Include="Utilities\WallpaperChanger.cs" />
     <Compile Include="Utilities\BackgroundTaskRegistrar.cs" />
     <Compile Include="Utilities\FrameExtractor.cs" />
   </ItemGroup>
