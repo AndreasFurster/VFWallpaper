@@ -25,28 +25,31 @@ namespace VFWallpaper.UWP.Pages
         {
 
             var pickedFile = await PickFile();
+
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            localSettings.Values["BackgroundVideoPath"] = pickedFile.Path;
             
-            Log($"File picked: {pickedFile.Name}");
+            // TODO: Make configurable with popups or something
+            const int speed = 4;
+            const int delay = 15;
+            var offsetStart = TimeSpan.FromMinutes(2);
+            var offsetEnd = TimeSpan.FromMinutes(0);
 
-            // TODO: Make configurable 
-            const double speed = 4;
-            const int delay = 1;
-            var offset = TimeSpan.FromMinutes(2);
+            localSettings.Values["BackgroundVideoSpeed"] = speed;
+            localSettings.Values["BackgroundVideoOffsetStart"] = offsetStart.TotalSeconds;
+            localSettings.Values["BackgroundVideoOffsetEnd"] = offsetEnd.TotalSeconds;
+            localSettings.Values["BackgroundVideoOffsetCurrentLocation"] = offsetStart.TotalSeconds;
 
-            var resolution = ApplicationView.GetForCurrentView().VisibleBounds;
-            var fe = new FrameExtractor(pickedFile, resolution);
+            //var btc = new BackgroundTaskRegistrar();
+            // btc.RegisterBackgroundChangerTask(15);
 
-            // TODO: Do this stuff in a task
-            for (int i = 10; i < 100; i++)
+            for (int i = 0; i < 100; i++)
             {
-                Log($"Start extracting frame: {i}");
-                var file = await fe.ExtractFrame(TimeSpan.FromSeconds(i * speed) + offset);
+                var bc = new BackgroundChanger();
+                await bc.Update();
 
-                Log($"Set as background");
-                await UserProfilePersonalizationSettings.Current.TrySetWallpaperImageAsync(file);
+                await Task.Delay(TimeSpan.FromSeconds(5));
 
-                Log($"Wait {delay} seconds");
-                await Task.Delay(TimeSpan.FromSeconds(delay));
             }
 
         }
